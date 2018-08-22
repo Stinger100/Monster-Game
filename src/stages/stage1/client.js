@@ -34,10 +34,25 @@ export default {
 
   // Optionally define a setup method that is run before stage begins
   setup: (client) => {
-    // You can prepare the canvas...
-    client.getCanvas().add(...['green', 'red', 'yello'].map(fill => new fabric.Triangle({
-      width: 50, height: 50, fill, left: Math.random() * 200, top: Math.random() * 500
-    })))
+      // You can prepare the canvas...
+      client.getCanvas().add (...['red', 'green', 'yellow'].map(fill => {
+          let rect = new fabric.Rect({
+              left: 100,
+              top: 100,
+              fill: 'red',
+              width: 20,
+              height: 20,
+              angle: 45
+          })
+          client.getCanvas().add(rect)
+return rect
+      }))
+// create a rectangle with angle=45
+
+
+
+
+
 
     // and access html...
     // Here we listen for button clicks.
