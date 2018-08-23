@@ -14,6 +14,7 @@
 import html from './stage1.html'
 // css is immediately applied on import.
 import './stage1.css'
+import gameController from './gameController'
 
 // Export the complete stage as the default export
 export default {
@@ -35,33 +36,19 @@ export default {
   // Optionally define a setup method that is run before stage begins
   setup: (client) => {
       // You can prepare the canvas...
-      client.getCanvas().add (...['red', 'green', 'yellow'].map(fill => {
-          let rect = new fabric.Rect({
-              left: 100,
-              top: 100,
-              fill: 'red',
-              width: 20,
-              height: 20,
-              angle: 45
-          })
-          client.getCanvas().add(rect)
-return rect
-      }))
-// create a rectangle with angle=45
+
+      gameController.test()
+
+      // var canvas = new fabric.client.getCanvas()
 
 
 
-
-
-
-    // and access html...
-    // Here we listen for button clicks.
     $('#stage1-button').mouseup(e => {
       e.preventDefault() // Stop button from default behaviour (You almost always want to do this).
       $('#stage1-title').html($('#stage1-input').val()) // Set title's content to value of input.
     })
   },
-  
+
   // Optionally define a teardown method that is run when stage finishes
   teardown (client) {
     $('#stage1-button').off() // Remove all event handlers from button
@@ -77,3 +64,4 @@ return rect
     htmlContainerHeight: 0.3
   }
 }
+
