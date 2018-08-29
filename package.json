@@ -15,7 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "monsterr": "^0.2.3"
+    "mongoose": "^5.2.9",
+    "monsterr": "^0.2.3",
+    "survey-jquery": "^1.0.39"
   },
   "devDependencies": {
     "babel-plugin-transform-html-import-to-string": "0.0.1",

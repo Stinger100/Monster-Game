@@ -1,7 +1,16 @@
 import createServer, { Network } from 'monsterr'
-import stage1 from './src/stages/stage1/server'
+import SurveyIntro from './src/stages/SurveyIntro/server/server'
+const mongoose = require('mongoose')
 
-const stages = [stage1]
+mongoose.connect('mongodb://localhost/surveydb', function (err, db) {
+  if (err) {
+    console.log('Unable to connect to db')
+  } else {
+    console.log(('We are connected to the database'))
+  }
+})
+
+const stages = [SurveyIntro]
 
 let events = {}
 let commands = {}
@@ -12,8 +21,8 @@ const monsterr = createServer({
   commands,
   stages,
   options: {
-    clientPassword: undefined,  // can specify client password
-    adminPassword: 'sEcr3t'     // and admin password
+    clientPassword: undefined, // can specify client password
+    adminPassword: 'sEcr3t' // and admin password
   }
 })
 
