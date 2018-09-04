@@ -2,26 +2,17 @@ let Survey = require('../../survey')
 
 export default {
 
-  commands: {},
+  commands: {
+  },
 
   // Optionally define events
   events: {
+    // store survey results to db
     'pre-survey_result': function (server, client, data) {
       console.log('Received pre-survey result from client:', client, '\n', data)
+      let questions = []
       for (let key in data) {
-        let survey = new Survey({
-          Question: key,
-          Answer: data[key]
-        })
-
-        survey.save()
-      }
-    }
-  },
-
-  /*     let questions = {}
-      for (let key in data) {
-        questions[key] = data
+        questions.push({Question: key, Answer: data[key]})
       }
       let survey = new Survey({
         clientId: client.data,
@@ -29,7 +20,8 @@ export default {
 
       })
       survey.save()
-       */
+    }
+  },
 
   // Optionally define a setup method that is run before stage begins
   setup: (server) => {

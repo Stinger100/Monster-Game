@@ -11,8 +11,23 @@ let options = {
   html
 }
 
-let events = {}
-let commands = {}
+let events = {
+  'resCSV': (admin, csv) => {
+    console.log('received')
+    let fileName = 'monsterr-game' + Date.now() + '.csv'
+
+    let url = window.URL.createObjectURL(new Blob([csv], {type: 'text/csv'}))
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.style = 'display: none'
+    a.href = url
+    a.download = fileName
+    a.click()
+    window.URL.revokeObjectURL(url)
+  }
+}
+let commands = {
+}
 
 const admin = createClient({
   events,
@@ -33,4 +48,9 @@ $('#admin-button-next').mouseup(e => {
 $('#admin-button-reset').mouseup(e => {
   e.preventDefault()
   admin.sendCommand('reset')
+})
+
+$('#admin-button-downloadData').mouseup(e => {
+  e.preventDefault()
+  admin.sendCommand('downloadData')
 })

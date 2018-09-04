@@ -15,8 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonexport": "^2.3.0",
+    "mongo-to-csv": "^1.0.1",
     "mongoose": "^5.2.9",
     "monsterr": "^0.2.3",
+    "server": "^1.0.18",
     "survey-jquery": "^1.0.39"
   },
   "devDependencies": {

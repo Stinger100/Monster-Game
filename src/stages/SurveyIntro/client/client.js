@@ -29,7 +29,9 @@ export default {
         '<div class="jumbotron">' +
                 '    <h1>Please wait for the other players...</h1>' +
                 '</div>')
-      client.stageFinished()
+      $('#surveyy').html('')
+      $('#stuff').html('Thank you very much for filling in our survey! Now we are preparing you for the next stage!')
+    //  client.stageFinished()
     }
 
     function showResult (survey) {
@@ -43,7 +45,13 @@ export default {
     $('#pre-survey').Survey({
       model: survey,
       onComplete: showResult
+
     })
+    /* $('#post-survey').Survey({
+      onComplete: () => {
+
+      }
+    }) */
   },
 
   // Optionally define a teardown method that is run when stage finishes

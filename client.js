@@ -3,7 +3,7 @@ import stage1 from './src/stages/stage1/client'
 import SurveyIntro from './src/stages/SurveyIntro/client/client'
 
 const stages = [
-    SurveyIntro
+  SurveyIntro
 ]
 
 let options = {
