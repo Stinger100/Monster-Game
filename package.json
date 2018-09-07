@@ -17,10 +17,12 @@
   "dependencies": {
     "jsonexport": "^2.3.0",
     "mongo-to-csv": "^1.0.1",
+    "mongodb": "^3.1.4",
     "mongoose": "^5.2.9",
     "monsterr": "^0.2.3",
     "server": "^1.0.18",
-    "survey-jquery": "^1.0.39"
+    "survey-jquery": "^1.0.39",
+    "csv-export": "latest"
   },
   "devDependencies": {
     "babel-plugin-transform-html-import-to-string": "0.0.1",

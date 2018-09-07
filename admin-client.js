@@ -13,7 +13,7 @@ let options = {
 
 let events = {
   'resCSV': (admin, csv) => {
-    console.log('received')
+    console.log('received' + JSON.stringify(csv))
     let fileName = 'monsterr-game' + Date.now() + '.csv'
 
     let url = window.URL.createObjectURL(new Blob([csv], {type: 'text/csv'}))

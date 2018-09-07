@@ -6,7 +6,7 @@ var survey = new Schema({
   questions: [
     {
       Question: String,
-      Answer: String
+      Answer: { String }
 
     }
   ]
